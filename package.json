@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Just a node Training for App Masters Company",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.0"
+  },
   "scripts": {
     "test": "test"
   },
@@ -22,6 +25,12 @@
   },
   "homepage": "https://github.com/jfbaraky/node-training#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "@app-masters/node-lib": "^1.1.1",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "node-restful": "^0.2.6"
   }
 }
