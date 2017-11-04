@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "cd src && node index.js",
+    "nodemon": "cd src && nodemon",
     "test": "test"
   },
   "repository": {

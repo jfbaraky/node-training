@@ -1,12 +1,25 @@
-let restful = require('node-restful');
-let mongoose = restful.mongoose;
+const restful = require('node-restful');
+const mongooseIt = require('@app-masters/mongoose-it').mongooseIt;
+const mongoose = restful.mongoose;
 
-let schema = {
+const schema = {
     name: String,
-    cover: String
+    cover: String,
+    lastTimePlayed: {
+        type: Date,
+        default: 0
+    },
+    numberOfSessions: {
+        type: Number,
+        default: 0
+    },
+    timeInSession: {
+        type: Number,
+        default: 0
+    }
 };
 
-let options = {
+const options = {
     timestamps: {
         createdAt: 'created_at',
         updatedAt: 'updated_at'
@@ -15,7 +28,8 @@ let options = {
     toJSON: {virtuals: true}
 };
 
-let mongooseSchema = mongoose.Schema(schema, options);
+const mongooseSchema = mongoose.Schema(schema, options);
+mongooseSchema.plugin(mongooseIt, 'game');
 
 mongoose.model('game', mongooseSchema);
 module.exports = mongooseSchema;
